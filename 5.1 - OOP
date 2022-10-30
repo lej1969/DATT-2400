@@ -2,11 +2,12 @@ class Target {
 
 //1. Instance Variables
 float x, y;
+float vx, vy;
 
 //2. Constructor
 //Name: no void, name must be the same as the class
 Target() {
-  x = )width/2)
+  x = (width/2)
   y = (height/2)
 }
 
@@ -16,5 +17,12 @@ void show() {
 }
 
 void act() {
-
+  x = x + vx;
+  y = y + vy;
+  
+  if (x < 0 || x > 600) {
+    vx = vx * -1;
+    
+  if (y < 0 || y > 600) {
+    vy = vy * -1;
 }
