@@ -1,0 +1,40 @@
+Timer timer;
+
+int currentTime;
+int countdownTime;
+int maxTime;
+
+String s;
+
+void setup(){
+  size(800,600);
+  timer = new Timer(500);
+  s = "";
+  
+  currentTime = 0;
+  maxTime = 10;
+  countdownTime = maxTime;
+  }
+  
+ void draw() {
+   background(200);
+   
+   //timer stuff
+   if(timer.complete() == true){
+    if(countdownTime >0) {
+      currenttime++;
+      countdownTime--;
+      timer.start();
+     } else {
+     fill(255, 0, 0);
+     rect(0, 0, width, height);
+    }
+   }
+   
+   //text stuff
+   fill(255);
+   texySize(48);
+   textAlign(CENTER);
+   s = "countdown time is " + countdownTime;
+   text(s, width/2, height/2);
+  }
